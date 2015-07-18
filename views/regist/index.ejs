@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Regist to <%= title %></p>
+    <form method='post' encrypt='multipart/form-data'>
+      <p><input type='text', name='Entry[name]', placeholder='Name'/></p>
+      <p><input type='text', name='Entry[email]', placeholder='Email'/></p>
+      <p><input type='submit' value='Submit'/></p>
+    </form>
+  </body>
+</html>
