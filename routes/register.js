@@ -4,13 +4,13 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    res.render('register', { title: 'Register' });
+    res.render('register', { title: 'Registration for HPCCOM 2015' });
 });
 
 /* POST method */
 router.post('/', function(req, res) {
     console.log(req.body.name);
-    res.render('register/confirm', {title: 'Register', name: req.body.name});
+    res.render('register/confirm', {title: 'Registration for HPCCOM 2015', name: req.body.name});
 });
 
 module.exports = router;
