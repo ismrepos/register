@@ -6,11 +6,22 @@
   </head>
   <body>
     <h1><%= title %></h1>
-    <p>Register to <%= title %></p>
+    <p>Please fill in the form bellow to entry!</p>
     <form method='post' encrypt='multipart/form-data'>
-      <p><input type='text', name='name', placeholder='Name'/></p>
+      <select name="Title">
+        <option value="" >[please select]</option>
+        <option value="Ms.">Ms.</option>
+        <option value="Mr.">Mr.</option>
+        <option value="Dr.">Dr.</option>
+        <option value="Prof.">Prof.</option>
+        <option value="Prof. Dr.">Prof. Dr.</option>
+        <option value="Prof. Dr. Dr.">Prof. Dr. Dr.</option>
+      </select>
+      <p><input type='text', name='firstname', placeholder='First Name'/></p>
+      <p><input type='text', name='lastname', placeholder='Last Name'/></p>
       <p><input type='text', name='email', placeholder='Email'/></p>
       <p><input type='submit' value='Submit'/></p>
     </form>
+    <p>If you have any questions, please contact <a href="mailto:hpccon15@ura3.c.ism.ac.jp">local office</a>.</p>
   </body>
 </html>
