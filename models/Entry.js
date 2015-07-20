@@ -1,10 +1,10 @@
-var mongoose = require('mongouse');
+var mongoose = require('mongoose');
 
 mongoose.connect('mongodb://localhost/regist_app');
 
-var schema = new mongoose.Scheam({
+var schema = new mongoose.Schema({
     name: String,
     mail: String
 });
 
-modlule.exports = mongoose.model('Entry', schema);
+module.exports = mongoose.model('Entry', schema);
