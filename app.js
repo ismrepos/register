@@ -25,6 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/register', register);
+app.use('/register/confirm', register);
 app.use('/admin', admin);
 
 // catch 404 and forward to error handler

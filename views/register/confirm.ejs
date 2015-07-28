@@ -12,7 +12,13 @@
     <%= email %>
     <%= organization %>
     <%= country %>
-    <form method='post' encrypt='multipart/form-data'>
+    <form action="/register/confirm" method='post' encrypt='multipart/form-data'>
+      <input type="hidden" name="Title" value=<%= Title %> />
+      <input type="hidden" name="firstname" value=<%= firstname %> />
+      <input type="hidden" name="lastname" value=<%= lastname %> />
+      <input type="hidden" name="email" value=<%= email %> />
+      <input type="hidden" name="organization" value=<%= organization %> />
+      <input type="hidden" name="country" value=<%= country %> />
       <p><input type='submit' value='Comfirm'/></p>
     </form>
   </body>
