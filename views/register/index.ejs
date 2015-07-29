@@ -6,13 +6,15 @@
   </head>
   <body>
     <h1><%= title %></h1>
-    <p>Please fill in the form below to entry!</p>
+    <p>Please fill in the form below to entry! <br/>
+      <font color="#ff0000"><%= errors %></font>
+    </p>&#5;
     <form action="/register" method='post' encrypt='multipart/form-data'>
       <table>
         <tr>
           <td>Title:</td>
           <td>
-            <select name="Title">
+            <select name="Title" >
               <option value="" >[please select]</option>
               <option value="Ms.">Ms.</option>
               <option value="Mr.">Mr.</option>
@@ -24,24 +26,24 @@
         </tr>
         <tr>
           <td>First Name:</td>
-          <td><input type='text', name='firstname', placeholder='First Name'/></td>
+          <td><input type='text', name='firstname', placeholder='First Name', value=<%= firstname %>></td>
         </tr>
         <tr>
           <td>Last Name:</td>
-          <td><input type='text', name='lastname', placeholder='Last Name'/></td>
+          <td><input type='text', name='lastname', placeholder='Last Name', value=<%= lastname %>></td>
         </tr>
         <tr>
           <td>Email:</td>
-          <td><input type='text', name='email', placeholder='Email'/></td>
+          <td><input type='text', name='email', placeholder='Email', value=<%= email %>></td>
         </tr>
         <tr>
           <td>Organization:</td>
-          <td><input type='text', name='organization', placeholder='Organization'/></td>
+          <td><input type='text', name='organization', placeholder='Organization', value=<%= organization %>></td>
         </tr>
         <tr>
           <td>Country</td>
           <td>
-            <select name="country">
+            <select name="country" >
               <option value="">[please select]</option>
               <option value="AF">Afghanistan</option>
               <option value="AL">Albania</option>
