@@ -1,14 +1,13 @@
 var express = require('express');
 var Entry = require('../models/Entry');
-//tmp
-var mongoose = require('mongoose');
 var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
 
     res.render('register',
-               {title: 'Registration for HPCCOM 2015',
+               {title: 'Registration for HPCCOM 2015 / HPC on R Workshop',
+                event: '',
                 firstname: '',
                 lastname: '',
                 Title: '',
@@ -21,6 +20,7 @@ router.get('/', function(req, res, next) {
 
 /* POST method */
 router.post('/', function(req, res) {
+
     //check empty
     req.assert('Title', 'Title').notEmpty();
     req.assert('firstname', 'First Name').notEmpty();
@@ -44,7 +44,8 @@ router.post('/', function(req, res) {
 
         //back with erros
         res.render('register',
-                   {title: 'Registration for HPCCOM 2015',
+                   {title: 'Registration for HPCCOM 2015 / HPC on R Workshop',
+                    event_id: req.body.event_id,
                     firstname: req.body.firstname,
                     lastname: req.body.lastname,
                     Title: req.body.Title,
@@ -56,7 +57,8 @@ router.post('/', function(req, res) {
     } else {
         //go to /confirm
         res.render('register/confirm',
-                   {title: 'Registration for HPCCOM 2015',
+                   {title: 'Registration for HPCCOM 2015 / HPC on R Workshop',
+                    event_id: req.body.event_id,
                     firstname: req.body.firstname,
                     lastname: req.body.lastname,
                     Title: req.body.Title,
@@ -67,32 +69,18 @@ router.post('/', function(req, res) {
 });
 
 router.post('/confirm', function(req, res) {
-    console.log(req.body);
-
     //validation by Entry.save (check email duplciated)
-
-
-/*
-    var entryModel = mongoose.model('Entry');
-    entryModel.find({}, function(err, entrys){
-        for(var i  = 0; i < entrys.length; i++){
-            console.log(entrys[i]._id);
-            console.log(entrys[i].email);
-        }
-    });
-
-    //
     var newEntry = new Entry(req.body);
     console.log(newEntry);
     newEntry.save(function(err) {
-        //validation
         if(err) {
             console.log(err.errors);
             //retry
             res.redirect('/register');
         }else{
-            res.render('register/confirm',
-                       {title: 'Registration for HPCCOM 2015',
+            res.render('register/complete',
+                       {title: 'Registration Successful. Thank you!',
+                        event_id: req.body.event_id,
                         firstname: req.body.firstname,
                         lastname: req.body.lastname,
                         Title: req.body.Title,
@@ -100,16 +88,9 @@ router.post('/confirm', function(req, res) {
                         organization: req.body.organization,
                         country: req.body.country});
         }
+
     });
-*/
-    res.render('register/complete',
-               {title: 'Registration for HPCCON 2015 Successful. Thank you!',
-                firstname: req.body.firstname,
-                lastname: req.body.lastname,
-                Title: req.body.Title,
-                email: req.body.email,
-                organization: req.body.organization,
-                country: req.body.country});
+
 });
 
 module.exports = router;

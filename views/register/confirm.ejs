@@ -6,13 +6,38 @@
   </head>
   <body>
     <h1><%= title %></h1>
-    <%= Title %>
-    <%= firstname %>
-    <%= lastname %>
-    <%= email %>
-    <%= organization %>
-    <%= country %>
+    <table border="1">
+      <tr>
+        <td>Event:</td>
+        <td><%= event_id %></td>
+      </tr>
+      <tr>
+        <td>Title:</td>
+        <td><%= Title %></td>
+      </tr>
+      <tr>
+        <td>First Name:</td>
+        <td><%= firstname %></td>
+      </tr>
+      <tr>
+        <td>Last Name:</td>
+        <td><%= lastname %></td>
+      </tr>
+      <tr>
+        <td>Email:</td>
+        <td><%= email %></td>
+      </tr>
+      <tr>
+        <td>Organization:</td>
+        <td><%= organization %></td>
+      </tr>
+      <tr>
+        <td>Country:</td>
+        <td><%= country %></td>
+      </tr>
+    </table>
     <form action="/register/confirm" method='post' encrypt='multipart/form-data'>
+      <input type="hidden" name="event_id" value='<%= event_id %>' />
       <input type="hidden" name="Title" value=<%= Title %> />
       <input type="hidden" name="firstname" value=<%= firstname %> />
       <input type="hidden" name="lastname" value=<%= lastname %> />

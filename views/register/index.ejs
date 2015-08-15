@@ -12,6 +12,15 @@
     <form action="/register" method='post' encrypt='multipart/form-data'>
       <table>
         <tr>
+          <td>Event:</td>
+          <td>
+            <input type="radio" name="event_id" value="HPCCON" checked="checked">Oct. 9-10 HPCCON
+            <input type="radio" name="event_id" value="R Workshop">Oct. 11-12 HPC on R Workshop
+            <input type="radio" name="event_id" value="Both">Both
+          </td>
+        </tr>
+        <tr><td><br/></td></tr>
+        <tr>
           <td>Title:</td>
           <td>
             <select name="Title" >
@@ -295,6 +304,7 @@
             </select>
           </td>
         </tr>
+
         <tr>
           <td></td>
           <td><input type='submit' value='Ok'/></td>
