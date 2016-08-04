@@ -6,7 +6,7 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
 
     res.render('register',
-               {title: 'Registration for HPCCON 2015 / HPC on R Workshop',
+               {title: 'Registration for HPCCON 2016 / Workshop: Statistical approach for IR',
                 event: '',
                 firstname: '',
                 lastname: '',
@@ -44,7 +44,7 @@ router.post('/', function(req, res) {
 
         //back with erros
         res.render('register',
-                   {title: 'Registration for HPCCON 2015 / HPC on R Workshop',
+                   {title: 'Registration for HPCCON 2016 / Workshop: Statistical approach for IR',
                     event_id: req.body.event_id,
                     firstname: req.body.firstname,
                     lastname: req.body.lastname,
@@ -57,7 +57,7 @@ router.post('/', function(req, res) {
     } else {
         //go to /confirm
         res.render('register/confirm',
-                   {title: 'Registration for HPCCON 2015 / HPC on R Workshop',
+                   {title: 'Registration for HPCCON 2016 / Workshop: Statistical approach for IR',
                     event_id: req.body.event_id,
                     firstname: req.body.firstname,
                     lastname: req.body.lastname,
